@@ -28,15 +28,34 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //----------------------------------------------------------------------------------------
-#include <system_error>
-#define MAGIC_ENUM_RANGE_MIN 0
-#define MAGIC_ENUM_RANGE_MAX 71
 #include <magic_enum/magic_enum.hpp>
 
 //-----------------------------------------------------------------------------------------
-int test_magic_enum(std::errc err)
+enum class numbers
 {
-	return magic_enum::enum_name(err).size();
+   zero, one, two, three, four,
+   five, six, seven, eight, nine,
+   ten, eleven, twelve, thirteen, fourteen,
+   fifteen, sixteen, seventeen, eighteen, nineteen,
+   twenty, twenty_one, twenty_two, twenty_three, twenty_four,
+   twenty_five, twenty_six, twenty_seven, twenty_eight, twenty_nine,
+   thirty, thirty_one, thirty_two, thirty_three, thirty_four,
+   thirty_five, thirty_six, thirty_seven, thirty_eight, thirty_nine,
+   forty, forty_one, forty_two, forty_three, forty_four,
+   forty_five, forty_six, forty_seven, forty_eight, forty_nine,
+   fifty, fifty_one, fifty_two, fifty_three, fifty_four,
+   fifty_five, fifty_six, fifty_seven, fifty_eight, fifty_nine,
+   sixty, sixty_one, sixty_two, sixty_three
+};
+
+template<>
+struct magic_enum::customize::enum_range<numbers>
+{ static constexpr int min{}, max{static_cast<int>(numbers::sixty_three)}; };
+
+//-----------------------------------------------------------------------------------------
+int test_magic_enum(numbers num)
+{
+	return magic_enum::enum_name(num).size();
 }
 
 int main(void)

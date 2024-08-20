@@ -33,6 +33,10 @@ project (magic_enum_benchmark
    LANGUAGES CXX
    VERSION 1.0.0)
 
+# CLI msvc build benchmark
+# call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+# cl /nologo /MD /std:c++latest /Bt+ -I build\_deps\magic_enum-src\include cbenchmark.cpp|find "c1xx.dll"
+
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
 	add_compile_options(-ftime-trace)
 else()
