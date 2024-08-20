@@ -1,5 +1,7 @@
 # Simple benchmark, identical to the cbenchmark in conjure_enum.
-see https://github.com/aras-p/ClangBuildAnalyzer
+see [conjure_enum](https://github.com/fix8mt/conjure_enum)
+
+see [ClangBuildAnalyzer](https://github.com/aras-p/ClangBuildAnalyzer)
 ```
 Example:
 #  ClangBuildAnalyzerLoc=~/prog/ClangBuildAnalyzer/build ArtifactLoc=build_clang examples/cbenchmark.sh
