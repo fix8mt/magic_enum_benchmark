@@ -28,6 +28,10 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //----------------------------------------------------------------------------------------
+// call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+// cd build
+// cl /nologo /MD /std:c++latest /Bt+ /I _deps/magic_enum-src/include ../cbenchmark.cpp|find "c1xx.dll"
+//----------------------------------------------------------------------------------------
 #include <magic_enum/magic_enum.hpp>
 
 //-----------------------------------------------------------------------------------------
